@@ -10,7 +10,7 @@ import LoginAndSignup from "./pages/Login-and-signup";
 import Booking1 from "./pages/Booking1";
 import Booking2 from "./pages/Booking2";
 import Booking from "./pages/Booking";
-
+import Payment from "./pages/Payment";
 function App() {
   const action = useNavigationType();
   const location = useLocation();
@@ -47,6 +47,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      case "/payment":
+        title = "";
+        metaDescription = "";
+        break;
     }
 
     if (title) {
@@ -70,6 +74,7 @@ function App() {
       <Route path="/booking" element={<Booking />} />
       <Route path="/booking1" element={<Booking1 />} />
       <Route path="/booking2" element={<Booking2 />} />
+      <Route path="/payment" element={<Payment />} />
     </Routes>
   );
 }
