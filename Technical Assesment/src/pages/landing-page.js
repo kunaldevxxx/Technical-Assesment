@@ -1,3 +1,6 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 const LandingPage = () => {
   return (
     <div className="w-full relative bg-white flex flex-col items-center justify-start text-left text-32xl text-white font-ibm-plex-sans">
@@ -24,16 +27,16 @@ const LandingPage = () => {
           </div>
           <div className="rounded box-border h-[43px] flex flex-row items-center justify-center py-3 px-5 text-center border-[1px] border-solid border-white">
             <div className="flex flex-row items-center justify-center py-0 px-1">
-              <div className="relative leading-[160%] font-semibold">
-                Sign In
-              </div>
+            <Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>
+              Sign In
+            </Link>
             </div>
           </div>
           <div className="rounded bg-darkorchid flex flex-row items-center justify-center py-3 px-5 text-center">
             <div className="flex flex-row items-center justify-center py-0 px-1">
-              <div className="relative leading-[160%] font-semibold">
-                Book Stay
-              </div>
+            <Link to="/booking" style={{ textDecoration: 'none', color: 'inherit' }}>
+              Book Stay
+            </Link>
             </div>
           </div>
         </div>
