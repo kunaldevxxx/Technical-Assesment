@@ -1,6 +1,10 @@
-import { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 
 const LoginAndSignup = () => {
+  const [email, setEmail] = useState(""); 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
   const onGoogleLoginContainerClick = useCallback(() => {
     window.open("https://myaccount.google.com/");
   }, []);
@@ -131,18 +135,18 @@ const LoginAndSignup = () => {
             <div className="flex-1 relative bg-dimgray h-px overflow-hidden" />
           </div>
           <div className="self-stretch flex flex-col items-center justify-start gap-[8px_0px] text-left">
-            <div className="self-stretch rounded-lg flex flex-col items-start justify-center gap-[4px_0px]">
-              <b className="self-stretch relative leading-[150%]">
-                Email Address
-              </b>
-              <div className="self-stretch rounded bg-gray-400 flex flex-row items-center justify-start p-4 text-white border-[1px] border-solid border-dimgray">
-                <div className="flex-1 flex flex-row items-center justify-start py-0 px-1">
-                  <div className="relative leading-[150%] overflow-hidden text-ellipsis whitespace-nowrap">
-                    Enter your email
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="self-stretch rounded-lg flex flex-col items-start justify-start gap-[4px_0px]">
+          <b className="self-stretch relative leading-[150%]">Email Address</b>
+          <div className="self-stretch rounded bg-gray-400 flex flex-row items-center justify-start p-4 text-white border-[1px] border-solid border-dimgray">
+            <input
+              type="email"
+              value={email} 
+              onChange={handleEmailChange} 
+              className="flex-1 relative leading-[150%] overflow-hidden text-ellipsis whitespace-nowrap bg-transparent border-none"
+              placeholder="Enter your email"
+            />
+          </div>
+        </div>
             <div className="self-stretch rounded-lg bg-darkcyan flex flex-row items-center justify-center py-4 px-6 text-center text-white">
               <div className="flex-1 h-[21px] flex flex-row items-center justify-center py-0 px-1 box-border">
                 <b className="flex-1 relative leading-[150%]">
