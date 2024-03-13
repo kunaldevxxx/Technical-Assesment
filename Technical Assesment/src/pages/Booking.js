@@ -1,43 +1,57 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 const Booking = () => {
+  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedTime, setSelectedTime] = useState('');
+
+  const handleDateChange = (event) => {
+    setSelectedDate(event.target.value);
+  };
+
+  const handleTimeChange = (event) => {
+    setSelectedTime(event.target.value);
+  };
     return (
       <div className="w-full relative bg-white flex flex-col items-center justify-start text-left text-sm text-white font-ibm-plex-sans">
-        <div className="w-full !m-[0] absolute top-[0px] right-[0px] left-[0px] bg-black flex flex-row items-center justify-between p-2 box-border z-[3]">
-          <div className="flex flex-row items-center justify-start py-0 px-2 gap-[0px_8px]">
-            <img className="w-6 relative h-6" alt="" src="/icon.svg" />
-            <div className="relative leading-[150%] font-semibold">
-              ReserveOcean LTD.
+         <div className="w-full !m-[0] absolute top-[0px] right-[0px] left-[0px] bg-black flex flex-row items-center justify-between p-2 box-border z-[7] text-sm">
+        <div className="flex flex-row items-center justify-start py-0 px-2 gap-[0px_8px]">
+          <img className="w-6 relative h-6" alt="" src="/icon.svg" />
+          <div className="relative leading-[150%] font-semibold">
+            ReserveOcean LTD.
+          </div>
+        </div>
+        <div className="flex-1 flex flex-row items-center justify-end gap-[0px_12px] text-xs">
+          <div className="self-stretch flex flex-row items-center justify-start py-0 px-4">
+            <div className="relative leading-[160%] font-semibold">Explore</div>
+          </div>
+          <div className="self-stretch flex flex-row items-center justify-start py-0 px-4">
+            <div className="relative leading-[160%] font-semibold">
+              Services
             </div>
           </div>
-          <div className="flex-1 flex flex-row items-center justify-end gap-[0px_12px] text-xs">
-            <div className="self-stretch flex flex-row items-center justify-start py-0 px-4">
-              <div className="relative leading-[160%] font-semibold">Explore</div>
+          <div className="self-stretch flex flex-row items-center justify-start py-0 px-4">
+            <div className="relative leading-[160%] font-semibold">
+              About Us
             </div>
-            <div className="self-stretch flex flex-row items-center justify-start py-0 px-4">
-              <div className="relative leading-[160%] font-semibold">
-                Services
-              </div>
+          </div>
+          <div className="rounded box-border h-[43px] flex flex-row items-center justify-center py-3 px-5 text-center border-[1px] border-solid border-white">
+            <div className="flex flex-row items-center justify-center py-0 px-1">
+            <Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>
+              Sign In
+            </Link>
             </div>
-            <div className="self-stretch flex flex-row items-center justify-start py-0 px-4">
-              <div className="relative leading-[160%] font-semibold">
-                About Us
-              </div>
-            </div>
-            <div className="rounded box-border h-[43px] flex flex-row items-center justify-center py-3 px-5 text-center border-[1px] border-solid border-white">
-              <div className="flex flex-row items-center justify-center py-0 px-1">
-                <div className="relative leading-[160%] font-semibold">
-                  Sign In
-                </div>
-              </div>
-            </div>
-            <div className="rounded bg-darkorchid flex flex-row items-center justify-center py-3 px-5 text-center">
-              <div className="flex flex-row items-center justify-center py-0 px-1">
-                <div className="relative leading-[160%] font-semibold">
-                  Book Stay
-                </div>
-              </div>
+
+          </div>
+          <div className="rounded bg-darkorchid flex flex-row items-center justify-center py-3 px-5 text-center">
+            <div className="flex flex-row items-center justify-center py-0 px-1">
+            <Link to="/booking" style={{ textDecoration: 'none', color: 'inherit' }}>
+              Book Stay
+            </Link>
             </div>
           </div>
         </div>
+      </div>
         <div className="self-stretch bg-black flex flex-col items-center justify-center py-40 px-4 gap-[40px_0px] z-[2] text-77xl font-inter">
           <div className="w-full flex flex-col items-center justify-center gap-[40px_0px] max-w-[1024px]">
             <b className="self-stretch relative text-48xl tracking-[-0.02em] leading-[104%]">
@@ -86,30 +100,28 @@ const Booking = () => {
           <div className="w-full rounded-13xl bg-gray-400 flex flex-col items-center justify-center p-8 box-border gap-[16px_0px] max-w-[480px] text-center text-19xl text-whitesmoke-200 font-space-grotesk">
             <div className="self-stretch flex flex-col items-center justify-center">
               <b className="self-stretch relative tracking-[-0.02em] leading-[118%]">
-                Enter Date
+               Enter Date
               </b>
             </div>
             <div className="self-stretch flex flex-col items-center justify-start gap-[8px_0px] text-left text-sm">
-              <div className="self-stretch rounded-lg flex flex-col items-start justify-center gap-[4px_0px]">
-                <b className="self-stretch relative leading-[150%]">Date</b>
-                <div className="self-stretch rounded bg-gray-400 flex flex-row items-center justify-start p-4 text-white border-[1px] border-solid border-dimgray">
-                  <div className="flex-1 flex flex-row items-center justify-start py-0 px-1">
-                    <div className="relative leading-[150%] overflow-hidden text-ellipsis whitespace-nowrap">
-                      Enter Date
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="self-stretch rounded-lg flex flex-col items-start justify-center gap-[4px_0px]">
-                <b className="self-stretch relative leading-[150%]">Time</b>
-                <div className="self-stretch rounded bg-gray-400 flex flex-row items-center justify-start p-4 text-white border-[1px] border-solid border-dimgray">
-                  <div className="flex-1 flex flex-row items-center justify-start py-0 px-1">
-                    <div className="relative leading-[150%] overflow-hidden text-ellipsis whitespace-nowrap">
-                      Enter Time
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="self-stretch rounded-lg flex flex-col items-start justify-center gap-[8px_0px]">
+        <b className="self-stretch relative leading-[150%]">Date</b>
+        <input
+          type="date"
+          value={selectedDate}
+          onChange={handleDateChange}
+          className="self-stretch rounded bg-gray-400 flex flex-row items-center justify-start p-4 text-white border-[1px] border-solid border-dimgray"
+        />
+      </div>
+      <div className="self-stretch rounded-lg flex flex-col items-start justify-center gap-[8px_0px]">
+        <b className="self-stretch relative leading-[150%]">Time</b>
+        <input
+          type="time"
+          value={selectedTime}
+          onChange={handleTimeChange}
+          className="self-stretch rounded bg-gray-400 flex flex-row items-center justify-start p-4 text-white border-[1px] border-solid border-dimgray"
+        />
+      </div>
               <div className="self-stretch rounded-lg bg-darkcyan flex flex-row items-center justify-center py-4 px-6 text-center text-white">
                 <div className="flex-1 h-[21px] flex flex-row items-center justify-center py-0 px-1 box-border">
                   <b className="flex-1 relative leading-[150%]">Proceed</b>
