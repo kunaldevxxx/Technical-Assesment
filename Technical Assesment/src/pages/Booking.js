@@ -107,20 +107,23 @@ const Booking = () => {
             <div className="self-stretch rounded-lg flex flex-col items-start justify-center gap-[8px_0px]">
         <b className="self-stretch relative leading-[150%]">Date</b>
         <input
-          type="date"
-          value={selectedDate}
-          onChange={handleDateChange}
-          className="self-stretch rounded bg-gray-400 flex flex-row items-center justify-start p-4 text-white border-[1px] border-solid border-dimgray"
-        />
+  type="date"
+  value={selectedDate}
+  onChange={handleDateChange}
+  className="self-stretch rounded bg-gray-400 flex flex-row items-center justify-start p-4 text-white border-[1px] border-solid border-dimgray"
+  required 
+/>
+
       </div>
       <div className="self-stretch rounded-lg flex flex-col items-start justify-center gap-[8px_0px]">
         <b className="self-stretch relative leading-[150%]">Time</b>
         <input
-          type="time"
-          value={selectedTime}
-          onChange={handleTimeChange}
-          className="self-stretch rounded bg-gray-400 flex flex-row items-center justify-start p-4 text-white border-[1px] border-solid border-dimgray"
-        />
+  type="time"
+  value={selectedTime}
+  onChange={handleTimeChange}
+  className="self-stretch rounded bg-gray-400 flex flex-row items-center justify-start p-4 text-white border-[1px] border-solid border-dimgray"
+  required 
+/>
       </div>
               <div className="self-stretch rounded-lg bg-darkcyan flex flex-row items-center justify-center py-4 px-6 text-center text-white">
                 <div className="flex-1 h-[21px] flex flex-row items-center justify-center py-0 px-1 box-border">

@@ -79,12 +79,13 @@ const Booking2 = () => {
               className="self-stretch rounded bg-gray-400 flex flex-row items-center justify-start p-4 border-[1px] border-solid border-dimgray"
               value={selectedRoom}
               onChange={(e) => handleRoomSelect(e.target.value)}
+              required
             >
               <option value="" disabled hidden>Select a Room</option>
               <option value="Room1">Room 1</option>
               <option value="Room2">Room 2</option>
               <option value="Room3">Room 3</option>
-              {/* Add more options as needed */}
+              
             </select>
           </div>
             <div className="self-stretch rounded-lg bg-darkcyan flex flex-row items-center justify-center py-4 px-6 text-center text-white">

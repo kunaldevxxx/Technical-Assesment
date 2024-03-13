@@ -90,6 +90,7 @@ const Booking1 = () => {
       type="number"
       className="relative leading-[150%] overflow-hidden text-ellipsis whitespace-nowrap bg-transparent border-none text-white focus:outline-none"
       placeholder="Enter Number"
+      required
     />
   </div>
 </div>
