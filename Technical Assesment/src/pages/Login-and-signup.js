@@ -1,10 +1,23 @@
 import React, { useCallback, useState } from "react";
-
+import { Navigate, useNavigate } from "react-router-dom";
 const LoginAndSignup = () => {
-  const [email, setEmail] = useState(""); 
+  const [email, setEmail] = useState("");
+  const [isEmailEntered, setIsEmailEntered] = useState(false);
+  const Navigate = useNavigate();
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
+    setIsEmailEntered(!!e.target.value);
   };
+
+  const handleProceedWithEmail = useCallback(() => {
+    if (isEmailEntered) {
+      Navigate("/booking");
+    } else {
+      alert("Please enter your email to proceed.");
+    }
+  }, [isEmailEntered, history]);
+
   const onGoogleLoginContainerClick = useCallback(() => {
     window.open("https://myaccount.google.com/");
   }, []);
@@ -147,13 +160,14 @@ const LoginAndSignup = () => {
             />
           </div>
         </div>
-            <div className="self-stretch rounded-lg bg-darkcyan flex flex-row items-center justify-center py-4 px-6 text-center text-white">
-              <div className="flex-1 h-[21px] flex flex-row items-center justify-center py-0 px-1 box-border">
-                <b className="flex-1 relative leading-[150%]">
-                  Proceed with Email
-                </b>
-              </div>
-            </div>
+        <div className="self-stretch rounded-lg bg-darkcyan flex flex-row items-center justify-center py-3 px-5 text-center text-white">
+        <div
+          className="flex-1 h-[21px] flex flex-row items-center justify-center py-0 px-1 box-border"
+          onClick={handleProceedWithEmail} // Handle click event for proceeding with email
+        >
+          <b className="flex-1 relative leading-[150%]">Proceed with Email</b>
+        </div>
+      </div>
           </div>
           <div className="self-stretch relative text-xs leading-[160%] text-white">
             Accepting terms confirms your consent.
