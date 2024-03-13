@@ -1,26 +1,21 @@
 import { useEffect } from "react";
-import {
-  Routes,
-  Route,
-  useNavigationType,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, useNavigationType, useLocation } from "react-router-dom";
 import LandingPage from "./pages/landing-page";
 import LoginAndSignup from "./pages/Login-and-signup";
 import Booking1 from "./pages/Booking1";
 import Booking2 from "./pages/Booking2";
 import Booking from "./pages/Booking";
 import Payment from "./pages/Payment";
+
 function App() {
   const action = useNavigationType();
-  const location = useLocation();
-  const pathname = location.pathname;
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (action !== "POP") {
       window.scrollTo(0, 0);
     }
-  }, [action, pathname]);
+  }, [action]);
 
   useEffect(() => {
     let title = "";
@@ -36,13 +31,7 @@ function App() {
         metaDescription = "";
         break;
       case "/booking":
-        title = "";
-        metaDescription = "";
-        break;
       case "/booking1":
-        title = "";
-        metaDescription = "";
-        break;
       case "/booking2":
         title = "";
         metaDescription = "";
@@ -51,16 +40,14 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+      default:
+        break;
     }
 
-    if (title) {
-      document.title = title;
-    }
+    document.title = title;
 
     if (metaDescription) {
-      const metaDescriptionTag = document.querySelector(
-        'head > meta[name="description"]'
-      );
+      const metaDescriptionTag = document.querySelector('head > meta[name="description"]');
       if (metaDescriptionTag) {
         metaDescriptionTag.content = metaDescription;
       }
@@ -78,4 +65,5 @@ function App() {
     </Routes>
   );
 }
+
 export default App;
