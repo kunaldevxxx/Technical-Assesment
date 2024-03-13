@@ -163,7 +163,7 @@ const LoginAndSignup = () => {
         <div className="self-stretch rounded-lg bg-darkcyan flex flex-row items-center justify-center py-3 px-5 text-center text-white">
         <div
           className="flex-1 h-[21px] flex flex-row items-center justify-center py-0 px-1 box-border"
-          onClick={handleProceedWithEmail} // Handle click event for proceeding with email
+          onClick={handleProceedWithEmail} 
         >
           <b className="flex-1 relative leading-[150%]">Proceed with Email</b>
         </div>

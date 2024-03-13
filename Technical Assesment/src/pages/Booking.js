@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 const Booking = () => {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
@@ -11,6 +11,13 @@ const Booking = () => {
 
   const handleTimeChange = (event) => {
     setSelectedTime(event.target.value);
+  };
+  const navigate = useNavigate();
+
+  
+  const navigateToBooking1 = () => {
+   
+    navigate('/booking1');
   };
     return (
       <div className="w-full relative bg-white flex flex-col items-center justify-start text-left text-sm text-white font-ibm-plex-sans">
@@ -125,7 +132,7 @@ const Booking = () => {
   required 
 />
       </div>
-              <div className="self-stretch rounded-lg bg-darkcyan flex flex-row items-center justify-center py-4 px-6 text-center text-white">
+              <div className="self-stretch rounded-lg bg-darkcyan flex flex-row items-center justify-center py-4 px-6 text-center text-white" onClick={navigateToBooking1}>
                 <div className="flex-1 h-[21px] flex flex-row items-center justify-center py-0 px-1 box-border">
                   <b className="flex-1 relative leading-[150%]">Proceed</b>
                 </div>

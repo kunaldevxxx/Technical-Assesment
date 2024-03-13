@@ -1,7 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';;
+import { useNavigate } from 'react-router-dom';
 
 const Booking1 = () => {
+  const navigate = useNavigate(); 
+
+  
+  const navigateToBooking2 = () => {
+    
+    navigate('/booking2');
+  };
     return (
       <div className="w-full relative bg-white flex flex-col items-center justify-start text-left text-sm text-white font-ibm-plex-sans">
          <div className="w-full !m-[0] absolute top-[0px] right-[0px] left-[0px] bg-black flex flex-row items-center justify-between p-2 box-border z-[7] text-sm">
@@ -95,7 +103,7 @@ const Booking1 = () => {
   </div>
 </div>
               </div>
-              <div className="self-stretch rounded-lg bg-darkcyan flex flex-row items-center justify-center py-4 px-6 text-center text-white">
+              <div className="self-stretch rounded-lg bg-darkcyan flex flex-row items-center justify-center py-4 px-6 text-center text-white" onClick={navigateToBooking2}>
                 <div className="flex-1 h-[21px] flex flex-row items-center justify-center py-0 px-1 box-border">
                   <b className="flex-1 relative leading-[150%]">Proceed</b>
                 </div>
